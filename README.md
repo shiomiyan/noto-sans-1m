@@ -1,3 +1,5 @@
+![](sample.png)
+
 ## 生成方法（WIP）
 
 以下、Windows環境を想定した生成方法。

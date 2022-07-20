@@ -16,6 +16,27 @@ fontforge -script generate.sh
 
 ```powershell
 .\ttx.exe -t OS/2 .\NotoSansMono1M-Regular.ttf
+```
+
+生成されたNotoSansMono1M-Regular.ttxの `xAvgCharWidth` を500にする。
+
+```diff
+<?xml version="1.0" encoding="utf-8"?>
+<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="2.4">
+
+  <OS_2>
+    <version value="1"/>
+-    <xAvgCharWidth value="600"/>
++    <xAvgCharWidth value="500"/>
+    <usWeightClass value="400"/>
+    <usWidthClass value="5"/>
+    <fsType value="00000000 00000000"/>
+
+```
+
+修正したttxを生成済のフォントに適用する。
+
+```powershell
 Rename-Item -Path .\NotoSansMono1M-Regular.ttf -NewName .\NotoSansMono1M-Regular-pre.ttf
 .\ttx.exe -m .\NotoSansMono1M-Regular-pre.ttf .\NotoSansMono1M-Regular.ttx
 ```
